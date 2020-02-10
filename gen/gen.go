@@ -18,7 +18,7 @@ import (
 
 // Keys generates a new P256 ECDSA public private key pair for TLS.
 // It returns a bytes buffer for the PEM encoded private key and certificate.
-func Keys(validFor time.Duration) (cert, key *bytes.Buffer, fingerprint [32]byte, err error) {
+func Keys(validFor time.Duration, altnames []string) (cert, key *bytes.Buffer, fingerprint [32]byte, err error) {
 	privKey, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
 	if err != nil {
 		log.Fatalf("failed to generate private key: %s", err)
@@ -46,6 +46,7 @@ func Keys(validFor time.Duration) (cert, key *bytes.Buffer, fingerprint [32]byte
 
 		KeyUsage:              x509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature | x509.KeyUsageCertSign,
 		ExtKeyUsage:           []x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},
+		DNSNames:              altnames,
 		BasicConstraintsValid: true,
 	}
 

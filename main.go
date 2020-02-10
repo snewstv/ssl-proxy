@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/suyashkumar/ssl-proxy/gen"
-	"github.com/suyashkumar/ssl-proxy/reverseproxy"
+	"github.com/malikbenkirane/ssl-proxy/gen"
+	"github.com/malikbenkirane/ssl-proxy/reverseproxy"
 	"golang.org/x/crypto/acme/autocert"
 )
 
@@ -22,6 +22,7 @@ var (
 	keyFile      = flag.String("key", "", "path to a private key file. If not provided, ssl-proxy will generate one for you in ~/.ssl-proxy/")
 	domain       = flag.String("domain", "", "domain to mint letsencrypt certificates for. Usage of this parameter implies acceptance of the LetsEncrypt terms of service.")
 	redirectHTTP = flag.Bool("redirectHTTP", false, "if true, redirects http requests from port 80 to https at your fromURL")
+	altnames     = flag.String("altnames", "localhost", "comma separated altnames for the certificate DNS field")
 )
 
 const (
@@ -47,7 +48,7 @@ func main() {
 		log.Printf("No existing cert or key specified, generating some self-signed certs for use (%s, %s)\n", *certFile, *keyFile)
 
 		// Generate new keys
-		certBuf, keyBuf, fingerprint, err := gen.Keys(365 * 24 * time.Hour)
+		certBuf, keyBuf, fingerprint, err := gen.Keys(365*24*time.Hour, strings.Split(*altnames, ","))
 		if err != nil {
 			log.Fatal("Error generating default keys", err)
 		}

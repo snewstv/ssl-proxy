@@ -1,4 +1,4 @@
-module github.com/suyashkumar/ssl-proxy
+module github.com/malikbenkirane/ssl-proxy
 
 go 1.13
 
