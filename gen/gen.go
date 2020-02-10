@@ -36,6 +36,7 @@ func Keys(validFor time.Duration) (cert, key *bytes.Buffer, fingerprint [32]byte
 	}
 
 	template := x509.Certificate{
+		IsCA:         true,
 		SerialNumber: serialNumber,
 		Subject: pkix.Name{
 			Organization: []string{"ssl-proxy"},
