@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/malikbenkirane/ssl-proxy/gen"
-	"github.com/malikbenkirane/ssl-proxy/reverseproxy"
+	"github.com/carelinus/ssl-proxy/gen"
+	"github.com/carelinus/ssl-proxy/reverseproxy"
 	"golang.org/x/crypto/acme/autocert"
 )
 

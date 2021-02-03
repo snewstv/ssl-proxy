@@ -1,12 +1,10 @@
-module github.com/malikbenkirane/ssl-proxy
+module github.com/carelinus/ssl-proxy
 
-go 1.13
+go 1.15
 
 require (
-	github.com/davecgh/go-spew v1.1.1
-	github.com/pmezard/go-difflib v1.0.0
-	github.com/stretchr/testify v1.2.2
-	golang.org/x/crypto v0.0.0-20191206172530-e9b2fee46413
-	golang.org/x/net v0.0.0-20191209160850-c0dbc17a3553
-	golang.org/x/text v0.3.2
+	github.com/stretchr/testify v1.7.0
+	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
+	golang.org/x/net v0.0.0-20210119194325-5f4716e94777 // indirect
+	golang.org/x/text v0.3.5 // indirect
 )
