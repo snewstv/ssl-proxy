@@ -3,5 +3,5 @@ services:
   build-release:
     build: .
     volumes:
-      - $PWD/build:/go/src/github.com/carelinus/ssl-proxy/build
+      - $PWD/build:/go/src/github.com/wallacy/ssl-proxy/build
     command: make release
