@@ -23,7 +23,7 @@ var (
 	certFile        = flag.String("cert", "", "path to a tls certificate file. If not provided, ssl-proxy will generate one for you in ~/.ssl-proxy/")
 	keyFile         = flag.String("key", "", "path to a private key file. If not provided, ssl-proxy will generate one for you in ~/.ssl-proxy/")
 	domain          = flag.String("domain", "", "domain to mint letsencrypt certificates for. Usage of this parameter implies acceptance of the LetsEncrypt terms of service.")
-	redirectHTTP    = flag.Int("redirectHTTP", 80, "if set, redirects http requests from provided port to https at your fromURL")
+	redirectHTTP    = flag.Int("redirectHTTP", 0, "if set, redirects http requests from provided port to https at your fromURL (0 disable)")
 	altnames        = flag.String("altnames", "localhost", "comma separated altnames for the certificate DNS field")
 	userHomeDir, _  = os.UserHomeDir()
 	defaultCertFile = userHomeDir + "/.ssl-proxy/cert.pem"

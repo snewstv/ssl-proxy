@@ -28,7 +28,7 @@ func newDirector(target *url.URL, extraDirector func(*http.Request)) func(*http.
 		req.URL.Host = target.Host
 		req.URL.Path = singleJoiningSlash(target.Path, req.URL.Path)
 		if targetQuery == "" || req.URL.RawQuery == "" {
-			req.URL.RawQuery = targetQuery + req.URL.RawQuery
+			req.URL.RawQuery = targetQuery + req.URL.RawQuery 
 		} else {
 			req.URL.RawQuery = targetQuery + "&" + req.URL.RawQuery
 		}
