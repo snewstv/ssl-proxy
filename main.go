@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wallacy/ssl-proxy/gen"
-	"github.com/wallacy/ssl-proxy/reverseproxy"
+	"github.com/snewstv/ssl-proxy/gen"
+	"github.com/snewstv/ssl-proxy/reverseproxy"
 	"golang.org/x/crypto/acme/autocert"
 )
 

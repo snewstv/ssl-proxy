@@ -1,4 +1,4 @@
-module github.com/wallacy/ssl-proxy
+module github.com/snewstv/ssl-proxy
 
 go 1.15
 
